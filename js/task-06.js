@@ -3,12 +3,16 @@ const atrData = Number(inputNumb.getAttribute('data-length'));
 
 inputNumb.addEventListener('blur', handlerBlur);
 
+function updateInput(addClass, removeClass) {
+    inputNumb.classList.add(addClass);
+    inputNumb.classList.remove(removeClass);
+}
+
 function handlerBlur(evt) {
-    if (inputNumb.value.length == atrData) {
-        inputNumb.classList.remove("invalid");
-        inputNumb.classList.add("valid")
+    if (inputNumb.value.length === atrData) {
+        updateInput("valid", "invalid")
     } else {
-        inputNumb.classList.remove("valid");
-        inputNumb.classList.add("invalid")
+        updateInput("invalid", "valid")
     }
 };
+

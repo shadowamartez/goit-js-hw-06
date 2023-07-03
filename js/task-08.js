@@ -7,16 +7,16 @@ function handlerSubmit(evt) {
     console.log(evt.currentTarget.elements);
     const { email, password } = evt.currentTarget.elements; 
 
-    if (email.value === "" || password.value === "") {
+    if (email.value.trim() === "" || password.value.trim() === "") {
         const message = "Please fill in all the fields!";
-        alert(message);
-    } else {
-        const data = {
-            email: email.value,
-            password: password.value
-        }
-        console.log(data);
+        return alert(message);
+    }
+    const data = {
+        email: email.value,
+        password: password.value
+    }
+    console.log(data);
     }
     evt.currentTarget.reset();
-}
+
 
